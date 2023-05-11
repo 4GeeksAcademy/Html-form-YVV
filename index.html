@@ -12,6 +12,13 @@
 
 </head>
 
+<style>
+    input[type=number]::-webkit-inner-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+</style>
+
 <body>
     <div class="container mt-5  rounded border">
         <!--header-->
@@ -20,7 +27,7 @@
         </div>
 
         <!--Alert-->
-            <div class="rounded mt-2 mb-2" style="background-color: pink; color: rgb(70, 19, 19);">
+            <div class="rounded mt-2 mb-2 p-2" style="background-color: pink; color: rgb(70, 19, 19);">
                 Some fields are missing
             </div>
 
@@ -30,46 +37,51 @@
         
             <div class="col-4">
             <label for="cardNum">Card #</label>
-            <input type="text" class="form-control" id="cardNum" placeholder="xxxxxxxxxx">
+            <input type="number" name="number" maxlength="16" class="form-control" id="cardNum" placeholder="xxxx-xxxx-xxxx-xxxx" required>
           </div>
 
           <div class="col-4">
             <label for="cvcNum">CVC</label>
-            <input type="text" class="form-control" id="cvcNum" placeholder="000">
+            <input type="number" name="number" maxlength="3" class="form-control" id="cvcNum" placeholder="000" required>
           </div>
-
+          
           <div class="col-4">
-            <label for="amountnum">Amount</label>
-            <input type="text" class="form-control" id="amountnum" placeholder="Amount">
+            <label class="ms-3" for="amountnum">Amount</label>            
+           <div class="d-flex"> 
+            <i class="fab fas fa-dollar-sign mt-auto mb-auto me-1"></i>
+            <input type="number" name="number" class="form-control" id="amountnum" placeholder="Amount" required>
+            </div>
           </div>
         
         <!--2nd row-->
         
             <div class="col-6">
                 <label for="name">First Name</label>
-                <input type="text" class="form-control" id="name">
+                <input type="text" class="form-control" id="name" required>
             </div>
             <div class="col-6">
                 <label for="lastName">Last Name</label>
-                <input type="text" class="form-control" id="lastName">
+                <input type="text" class="form-control" id="lastName" required>
             </div>
         
         <!--3rd row-->
         
             <div class="col-4">
                 <label for="cities">City</label>
-                <input type="text" class="form-control" id="cities">
+                <input type="text" class="form-control" id="cities" required>
             </div>
             <div class="col-4">
                 <label for="states">State</label>
-                <select id="states" class="form-control">
+                <select id="states" class="form-control" required>
                     <option selected>Choose...</option>
-                    <option>...</option>
+                    <option>VA</option>
+                    <option>GA</option>
+                    <option>FL</option>
                   </select>
             </div>
             <div class="col-4">
                 <label for="postCode">Postal Code</label>
-                <input type="text" class="form-control" id="postCode">
+                <input type="number" name="number" maxlength="5" class="form-control" id="postCode" required>
             </div>
 
         <!--4th row-->
@@ -100,7 +112,8 @@
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 <p style="font-size: small;">Add notes here</p>
             </div>
-      </form>
+        </form>
+      
 
 
               <!--footer-->
